@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang=”pl”>
+
+<head>
+    <title>Kalkulator dopłat</title>
+    <meta charset=”UTF-8″>
+    <meta name="keywords" content="Kalkulator dopłat, wyliczanie dopłat, dopłaty bezpośrednie, obliczanie dopłat, dopłaty obszarowe">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'Kalkulator/style.css' %}">
+</head>
+
+{% block content %}{% endblock content %}
+{% load static %}
+
+<body>
+  {% if user.is_authenticated %}
+  <div class="main-container">
+        <center><h1>KALKULATOR DOPŁAT BEZPOŚREDNICH</h1></center>
+        <p align="right">Zalogowany użytkownik: {{ user.username }}</p>
+      <div class="przycisk">
+        <form method="post" action="{% url 'wyloguj' %}">
+            <button><a href="{% url 'wyloguj' %}">Wyloguj</a></button>
+          <input type="hidden" name="next" value="{% url 'wyloguj' %}" />
+        </form>
+        <form method="post" action="{% url 'user:password_change' %}">
+          <button><a href="{% url 'user:password_change' %}">Zmień hasło</a></button>
+          <input type="hidden" name="next" value="{% url 'user:password_change' %}" />
+        </form>
+      </div>
+      <nav class="site-menu">
+        <ul>
+          <li>
+            <a href="/" >Strona główna</a>
+          </li>
+          <li>
+            <a href="/platnosci">Wybierz płatności</a>
+          </li>
+          <li>
+            <a href="/podsumowanie">Podsumowanie</a>
+          </li>
+          <li>
+            <a href="/podsumowanieplatnosci">Wyliczone płatności</a>
+          </li>
+          <li>
+            <a href="https://www.gov.pl/web/arimr">ARiMR</a>
+          </li>
+          <li>
+            <a href="https://www.gov.pl/web/rolnictwo/">MRiRW</a>
+          </li>
+          <li>
+            <a href="/linki">Przydatne linki</a>
+          </li>
+          <li>
+            <a href="https://www.programva.com/pl/kalkulator-matematyczny-naukowy-online">Kalkulator</a>
+          </li>
+        </ul>
+      </nav>
+      <div class="main-content">
+
+      </div>
+  </div>
+
+  {% else %}
+  <div align="left">
+    <button><a href="{% url 'user:register' %}">Zarejestruj</a></button>
+    <button><a href="{% url 'user:login' %}">Zaloguj</a></button>
+  </div>
+  {% endif %}
+
+{% block wszystko %}{% endblock wszystko %}
+</body>
+
+</html>

@@ -1,0 +1,22 @@
+<html lang=”pl”>
+
+<head>
+    <meta charset=”UTF-8″>
+    <title>Kalkulator</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'Kalkulator/style.css' %}">
+</head>
+
+{% block content %}
+
+    <div align="center">
+    <form method="post" action="{% url 'user:register' %}">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button name="submit"><b>Zarejestruj</b></button>
+    <input type="hidden" name="next" value="{% url 'main_page' %}" />
+    </form>
+    </div>
+
+{% endblock content %}
+

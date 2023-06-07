@@ -1,0 +1,30 @@
+{% extends 'Kalkulator/szablon.html' %}
+
+{% block wszystko %}
+{% load static %}
+
+<div class="main-content">
+<p>Płatność: JPO</p>
+<p>Opis: Jednolita płatność obszarowa.</p>
+<p>Stawka płatności: 518,01 zł.</p>
+<p></p>
+<p>Z płatnością JPO powiązane są płatności (jeśli są spełnone warunki):</p>
+<p>1. Płatność do zazielenienia. Stawka płatności: 347,66 zł.</p>
+<p>2. Płatność dodatkowa - redystrybucyjna. Stawka płatności: 196,14 zł.</p>
+<p>3. Płatność dla Młodych rolników (MR). Stawka płatności: 360,91 zł.</p>
+
+<p></p>
+<p>Wprowadź powierzchnię JPO oraz powierzchnię zmniejszeń.</p>
+    <form action="{% url 'dodajwartoscjpo' platnoscjpo.id %}" method='post'>
+        {% csrf_token %}
+        <table border="1">
+        {{ form }}
+        </table>
+        <b><p>W celu dodania wartości do wyliczeń  wciśnij przycisk "DODAJ DO WYLICZEŃ".</p></b>
+        <button name="submit">DODAJ DO WYLICZEŃ</button>
+        <b><p>Aby dokonać wyboru kolejnej płatności należy na panelu bocznym kliknąć "Wybierz płatności".</p></b>
+        <b><p>W celu wyliczenia płatności należy na panelu bocznym kliknąć "Podsumowanie".
+    </form>
+</div>
+
+{% endblock wszystko %}

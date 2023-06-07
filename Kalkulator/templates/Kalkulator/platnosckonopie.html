@@ -1,0 +1,26 @@
+{% extends 'Kalkulator/szablon.html' %}
+
+{% block wszystko %}
+{% load static %}
+
+<div class="main-content">
+<p>Płatność: Konopie</p>
+<p>Opis: Płatność do konopii.</p>
+<p>Stawka płatności: 274,82 zł.</p>
+<p></p>
+
+<p></p>
+<p>Wprowadź powierzchnię uprawy konopii oraz powierzchnię zmniejszeń.</p>
+    <form action="{% url 'dodajwartosckonopie' platnosckonopie.id %}" method='post'>
+        {% csrf_token %}
+        <table border="1">
+        {{ form }}
+        </table>
+        <b><p>W celu dodania wartości do wyliczeń  wciśnij przycisk "DODAJ DO WYLICZEŃ".</p></b>
+        <button name="submit">DODAJ DO WYLICZEŃ</button>
+        <b><p>Aby dokonać wyboru kolejnej płatności należy na panelu bocznym kliknąć "Wybierz płatności".</p></b>
+        <b><p>W celu wyliczenia płatności należy na panelu bocznym kliknąć "Podsumowanie".
+    </form>
+</div>
+
+{% endblock wszystko %}

@@ -1,0 +1,7 @@
+*.pyc
+*~
+__pycache__
+KalkulatorDoplat_env
+db.sqlite3
+/static
+.DS_Store

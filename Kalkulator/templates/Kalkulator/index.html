@@ -1,0 +1,50 @@
+{% extends 'Kalkulator/szablon.html' %}
+
+{% block wszystko %}
+
+<div class="main-content">
+<b>
+    {% if user.is_authenticated %}
+        <center>
+        <p>Zapraszamy do zapoznania się z zakresem obsługiwanych płatności.</p>
+        <p>Wyliczenia na tej stronie są orientacyjne i mogą odbiegać od kwot podanych w decyzjach ARiMR.</p>
+        <p>Ze względu na skomplikowane algorytmy wyliczania płatności, wyniki obliczeń mogą zawierać błędy.</p>
+        <p>Niektóre zasady przyznania płatności mogą nie być zaimplementowane do wyliczeń.</p>
+        <h1>Wcelu dokonania wyliczeń proszę o wybranie opcji "Wybierz płatności", z panelu bocznego.</h1>
+        </center>
+    {% else %}
+        <center>
+        <p>Zapraszamy do zapoznania się z zakresem obsługiwanych płatności.</p>
+        <p>Wyliczenia na tej stronie są orientacyjne i mogą odbiegać od kwot podanych w decyzjach ARiMR.</p>
+        <p>Ze względu na skomplikowane algorytmy wyliczania płatności, wyniki obliczeń mogą zawierać błędy.</p>
+        <p>Niektóre zasady przyznania płatności mogą nie być zaimplementowane do wyliczeń.</p>
+        <h2>UWAGA!!!</h2>
+        <h2>WYLICZANIE PŁATNOŚCI MOŻLIWE JEDYNIE DLA ZALOGOWANYCH UŻYTKOWNIKÓW!</h2>
+        <h2>ABY W PEŁNI KORZYSTAĆ Z SERWISU PROSZĘ SIĘ ZALOGOWAĆ LUB ZAREJESTROWAĆ I ZALOGOWAĆ!</h2>
+        </center>
+    {% endif %}
+</b>
+<h2>Na stronie wyliczyć można następujące rodzaje płatności:</h2>
+<p>Jednolita Płatność Obszarowa</p>
+<p>Płatność do zazielenienia</p>
+<p>Płatność redystrybucyjna</p>
+<p>Uzupełniająca Płatność Podstawowa</p>
+<p>Płatność dla młodego rolnika</p>
+<p>Płatność do roślin strączkowych</p>
+<p>Płatność do roślin pastewnych</p>
+<p>Płatność do buraków cukrowych</p>
+<p>Płatność do ziemniaków skrobiowych</p>
+<p>Płatność do truskawek</p>
+<p>Płatność do pomidorów</p>
+<p>Płatność do chmielu</p>
+<p>Płatność do lnu</p>
+<p>Płatność do konopii</p>
+<p>Płatność do krów</p>
+<p>Płatność do bydła</p>
+<p>Płatność do owiec</p>
+<p>Płatność do kóz</p>
+<p>Płatność do tytoniu</p>
+<p>Płatność do tytoniu Virginia</p>
+</div>
+
+{% endblock wszystko %}

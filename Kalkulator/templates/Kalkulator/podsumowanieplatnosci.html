@@ -1,0 +1,144 @@
+{% extends 'Kalkulator/szablon.html' %}
+
+{% block wszystko %}
+
+<div class="main-content">
+<p> Wyliczone płatności: </p>
+{% if user.is_authenticated %}
+    {% if platnoscjpo_podsumowanieplatnosci %}
+        {% for platnoscjpo in platnoscjpo_podsumowanieplatnosci %}
+            {% if platnoscjpo.id == user.id %}
+                <p>Płatność: JPO - wyliczona kwota: {{platnoscjpo.wynikjpo}} zł</p>
+                {% if platnoscjpo.wynikzaz != 0 %}
+                    <p>Płatność: Zazielenienie - wyliczona kwota: {{platnoscjpo.wynikzaz}} zł</p>
+                {% endif %}
+                {% if platnoscjpo.wynikredys != 0 %}
+                    <p>Płatność: Redystrybucyjna - wyliczona kwota: {{platnoscjpo.wynikredys}} zł</p>
+                {% endif %}
+                {% if platnoscjpo.czy_mr == 'tak' %}
+                    <p>Płatność: Młody rolnik - wyliczona kwota: {{platnoscjpo.wynikmr}} zł</p>
+                {% endif %}
+            {% endif %}
+        {% endfor %}
+    {% else %}
+        <p> Obecnie brak jest wyliczonych płatności. </p>
+    {% endif %}
+    {% if platnoscupp_podsumowanieplatnosci %}
+        {% for platnoscupp in platnoscupp_podsumowanieplatnosci %}
+            {% if platnoscupp.id == user.id %}
+                <p>Płatność: UPP - wyliczona kwota: {{platnoscupp.wynikupp}} zł</p>
+            {% endif %}
+        {% endfor %}
+    {% endif %}
+    {% if platnoscp_str_podsumowanieplatnosci %}
+        {% for platnoscp_str in platnoscp_str_podsumowanieplatnosci %}
+            {% if platnoscp_str.id == user.id %}
+                <p>Płatność: P_STR - wyliczona kwota: {{platnoscp_str.wynikp_str}} zł</p>
+            {% endif %}
+        {% endfor %}
+    {% endif %}
+    {% if platnoscp_pas_podsumowanieplatnosci %}
+        {% for platnoscp_pas in platnoscp_pas_podsumowanieplatnosci %}
+            {% if platnoscp_pas.id == user.id %}
+                <p>Płatność: P_PAS - wyliczona kwota: {{platnoscp_pas.wynikp_pas}} zł</p>
+            {% endif %}
+        {% endfor %}
+    {% endif %}
+    {% if platnoscp_burak_podsumowanieplatnosci %}
+        {% for platnoscp_burak in platnoscp_burak_podsumowanieplatnosci %}
+            {% if platnoscp_burak.id == user.id %}
+                <p>Płatność: P_Burak - wyliczona kwota: {{platnoscp_burak.wynikp_burak}} zł</p>
+            {% endif %}
+        {% endfor %}
+    {% endif %}
+    {% if platnoscp_skrobia_podsumowanieplatnosci %}
+        {% for platnoscp_skrobia in platnoscp_skrobia_podsumowanieplatnosci %}
+            {% if platnoscp_skrobia.id == user.id %}
+                <p>Płatność: P_Skrobia - wyliczona kwota: {{platnoscp_skrobia.wynikp_skrobia}} zł</p>
+            {% endif %}
+        {% endfor %}
+    {% endif %}
+    {% if platnoscp_trus_podsumowanieplatnosci %}
+        {% for platnoscp_trus in platnoscp_trus_podsumowanieplatnosci %}
+            {% if platnoscp_trus.id == user.id %}
+                <p>Płatność: P_Truskawka - wyliczona kwota: {{platnoscp_trus.wynikp_trus}} zł</p>
+            {% endif %}
+        {% endfor %}
+    {% endif %}
+    {% if platnoscpomidor_podsumowanieplatnosci %}
+        {% for platnoscpomidor in platnoscpomidor_podsumowanieplatnosci %}
+            {% if platnoscpomidor.id == user.id %}
+                <p>Płatność: Pomidor - wyliczona kwota: {{platnoscpomidor.wynikpomidor}} zł</p>
+            {% endif %}
+        {% endfor %}
+    {% endif %}
+    {% if platnoscchmiel_podsumowanieplatnosci %}
+        {% for platnoscchmiel in platnoscchmiel_podsumowanieplatnosci %}
+            {% if platnoscchmiel.id == user.id %}
+                <p>Płatność: Chmiel - wyliczona kwota: {{platnoscchmiel.wynikchmiel}} zł</p>
+            {% endif %}
+        {% endfor %}
+    {% endif %}
+    {% if platnosclen_podsumowanieplatnosci %}
+        {% for platnosclen in platnosclen_podsumowanieplatnosci %}
+            {% if platnosclen.id == user.id %}
+                <p>Płatność: Len - wyliczona kwota: {{platnosclen.wyniklen}} zł</p>
+            {% endif %}
+        {% endfor %}
+    {% endif %}
+    {% if platnosckonopie_podsumowanieplatnosci %}
+        {% for platnosckonopie in platnosckonopie_podsumowanieplatnosci %}
+            {% if platnosckonopie.id == user.id %}
+                <p>Płatność: Konopie - wyliczona kwota: {{platnosckonopie.wynikkonopie}} zł</p>
+            {% endif %}
+        {% endfor %}
+    {% endif %}
+    {% if platnosctyton_podsumowanieplatnosci %}
+        {% for platnosctyton in platnosctyton_podsumowanieplatnosci %}
+            {% if platnosctyton.id == user.id %}
+                <p>Płatność: Tytoń - wyliczona kwota: {{platnosctyton.wyniktyton}} zł</p>
+            {% endif %}
+        {% endfor %}
+    {% endif %}
+    {% if platnoscvirginia_podsumowanieplatnosci %}
+        {% for platnoscvirginia in platnoscvirginia_podsumowanieplatnosci %}
+            {% if platnoscvirginia.id == user.id %}
+                <p>Płatność: Tytoń Virginia - wyliczona kwota: {{platnoscvirginia.wynikvirginia}} zł</p>
+            {% endif %}
+        {% endfor %}
+    {% endif %}
+    {% if platnosckrowy_podsumowanieplatnosci %}
+        {% for platnosckrowy in platnosckrowy_podsumowanieplatnosci %}
+            {% if platnosckrowy.id == user.id %}
+                <p>Płatność: Krowy - wyliczona kwota: {{platnosckrowy.wynikkrowy}} zł</p>
+            {% endif %}
+        {% endfor %}
+    {% endif %}
+    {% if platnoscbydlo_podsumowanieplatnosci %}
+        {% for platnoscbydlo in platnoscbydlo_podsumowanieplatnosci %}
+            {% if platnoscbydlo.id == user.id %}
+                <p>Płatność: Bydło - wyliczona kwota: {{platnoscbydlo.wynikbydlo}} zł</p>
+            {% endif %}
+        {% endfor %}
+    {% endif %}
+    {% if platnoscowce_podsumowanieplatnosci %}
+        {% for platnoscowce in platnoscowce_podsumowanieplatnosci %}
+            {% if platnoscowce.id == user.id %}
+                <p>Płatność: Owce - wyliczona kwota: {{platnoscowce.wynikowce}} zł</p>
+            {% endif %}
+        {% endfor %}
+    {% endif %}
+    {% if platnosckozy_podsumowanieplatnosci %}
+        {% for platnosckozy in platnosckozy_podsumowanieplatnosci %}
+            {% if platnosckozy.id == user.id %}
+                <p>Płatność: Kozy - wyliczona kwota: {{platnosckozy.wynikkozy}} zł</p>
+            {% endif %}
+        {% endfor %}
+    {% endif %}
+{% endif %}
+
+<b><p>Aby wyczyścić wprowadzone dane oraz wyliczone płatności wciśnij przycisk "WYCZYŚĆ".</p></b>
+<button><a href="/wyczysc">WYCZYŚĆ</a></button>
+</div>
+
+{% endblock wszystko %}

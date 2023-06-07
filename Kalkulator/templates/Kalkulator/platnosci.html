@@ -1,0 +1,210 @@
+{% extends 'Kalkulator/szablon.html' %}
+
+<head>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'Kalkulator/style.css' %}">
+</head>
+
+
+{% block wszystko %}
+<div class="main-content">
+    <p>Aby wprowadzić dane do wyliczeń proszę wybrać odnośnik do jednej z płatności wymienionych poniżej.</p>
+    <p>W celu wprowadzenia danych dotyczących sankcji, proszę wybrać odnośnik do jednej z sankcji wyszczególnionych na poniższej liście.</p>
+    <h3>Płatności dostępne do wyliczania:</h3>
+    {% if user.is_authenticated %}
+        {% for platnoscjpo in platnoscijpo %}
+              {% if platnoscjpo.id == user.id %}
+                <b>
+                <li>
+                    <a href ="platnoscjpo/{{platnoscjpo.id}}">Płatność JPO</a>
+                </li>
+                </b>
+               {% endif %}
+        {% endfor %}
+        {% for platnoscupp in platnosciupp %}
+              {% if platnoscupp.id == user.id %}
+                <b>
+                <li>
+                    <a href ="platnoscupp/{{platnoscupp.id}}">Płatność UPP</a>
+                </li>
+                </b>
+            {% endif %}
+        {% endfor %}
+        {% for platnoscp_str in platnoscip_str %}
+              {% if platnoscp_str.id == user.id %}
+                <b>
+                <li>
+                    <a href ="platnoscp_str/{{platnoscp_str.id}}">Płatność P_STR</a>
+                </li>
+                </b>
+            {% endif %}
+        {% endfor %}
+        {% for platnoscp_pas in platnoscip_pas %}
+              {% if platnoscp_pas.id == user.id %}
+                <b>
+                <li>
+                    <a href ="platnoscp_pas/{{platnoscp_pas.id}}">Płatność P_PAS</a>
+                </li>
+                </b>
+            {% endif %}
+        {% endfor %}
+        {% for platnoscp_burak in platnoscip_burak %}
+              {% if platnoscp_burak.id == user.id %}
+                <b>
+                <li>
+                    <a href ="platnoscp_burak/{{platnoscp_burak.id}}">Płatność P_Burak</a>
+                </li>
+                </b>
+            {% endif %}
+        {% endfor %}
+        {% for platnoscp_skrobia in platnoscip_skrobia %}
+              {% if platnoscp_skrobia.id == user.id %}
+                <b>
+                <li>
+                    <a href ="platnoscp_skrobia/{{platnoscp_skrobia.id}}">Płatność P_Skrobia</a>
+                </li>
+                </b>
+            {% endif %}
+        {% endfor %}
+        {% for platnoscp_trus in platnoscip_trus %}
+              {% if platnoscp_trus.id == user.id %}
+                <b>
+                <li>
+                    <a href ="platnoscp_trus/{{platnoscp_trus.id}}">Płatność P_Truskawka</a>
+                </li>
+                </b>
+            {% endif %}
+        {% endfor %}
+        {% for platnoscpomidor in platnoscipomidor %}
+              {% if platnoscpomidor.id == user.id %}
+                <b>
+                <li>
+                    <a href ="platnoscpomidor/{{platnoscpomidor.id}}">Płatność Pomidor</a>
+                </li>
+                </b>
+            {% endif %}
+        {% endfor %}
+        {% for platnoscchmiel in platnoscichmiel %}
+              {% if platnoscchmiel.id == user.id %}
+                <b>
+                <li>
+                    <a href ="platnoscchmiel/{{platnoscchmiel.id}}">Płatność Chmiel</a>
+                </li>
+                </b>
+            {% endif %}
+        {% endfor %}
+        {% for platnosclen in platnoscilen %}
+              {% if platnosclen.id == user.id %}
+                <b>
+                <li>
+                    <a href ="platnosclen/{{platnosclen.id}}">Płatność Len</a>
+                </li>
+                </b>
+            {% endif %}
+        {% endfor %}
+        {% for platnosckonopie in platnoscikonopie %}
+              {% if platnosckonopie.id == user.id %}
+                <b>
+                <li>
+                    <a href ="platnosckonopie/{{platnosckonopie.id}}">Płatność Konopie</a>
+                </li>
+                </b>
+            {% endif %}
+        {% endfor %}
+        {% for platnosctyton in platnoscityton %}
+              {% if platnosctyton.id == user.id %}
+                <b>
+                <li>
+                    <a href ="platnosctyton/{{platnosctyton.id}}">Płatność Tyton</a>
+                </li>
+                </b>
+            {% endif %}
+        {% endfor %}
+        {% for platnoscvirginia in platnoscivirginia %}
+              {% if platnoscvirginia.id == user.id %}
+                <b>
+                <li>
+                    <a href ="platnoscvirginia/{{platnoscvirginia.id}}">Płatność Tyton Virginia</a>
+                </li>
+                </b>
+            {% endif %}
+        {% endfor %}
+        {% for platnosckrowy in platnoscikrowy %}
+              {% if platnosckrowy.id == user.id %}
+                <b>
+                <li>
+                    <a href ="platnosckrowy/{{platnosckrowy.id}}">Płatność do krów</a>
+                </li>
+                </b>
+            {% endif %}
+        {% endfor %}
+        {% for platnoscbydlo in platnoscibydlo %}
+              {% if platnoscbydlo.id == user.id %}
+                <b>
+                <li>
+                    <a href ="platnoscbydlo/{{platnoscbydlo.id}}">Płatność do bydła</a>
+                </li>
+                </b>
+            {% endif %}
+        {% endfor %}
+        {% for platnoscowce in platnosciowce %}
+              {% if platnoscowce.id == user.id %}
+                <b>
+                <li>
+                    <a href ="platnoscowce/{{platnoscowce.id}}">Płatność do owiec</a>
+                </li>
+                </b>
+            {% endif %}
+        {% endfor %}
+        {% for platnosckozy in platnoscikozy %}
+              {% if platnosckozy.id == user.id %}
+                <b>
+                <li>
+                    <a href ="platnosckozy/{{platnosckozy.id}}">Płatność do kóz</a>
+                </li>
+                </b>
+            {% endif %}
+        {% endfor %}
+        <p> </p>
+        <p> </p>
+        <h3>Sankcje:</h3>
+        {% for sankcjacc in sankcjecc %}
+              {% if sankcjacc.id == user.id %}
+                <b>
+                <li>
+                    <a href ="sankcjacc/{{sankcjacc.id}}">Sankcja CC</a>
+                </li>
+                </b>
+            {% endif %}
+        {% endfor %}
+        {% for sankcjaefa in sankcjeefa %}
+              {% if sankcjaefa.id == user.id %}
+                <b>
+                <li>
+                    <a href ="sankcjaefa/{{sankcjaefa.id}}">Sankcja EFA</a>
+                </li>
+                </b>
+            {% endif %}
+        {% endfor %}
+        {% for sankcjaniezad in sankcjeniezad %}
+              {% if sankcjaniezad.id == user.id %}
+                <b>
+                <li>
+                    <a href ="sankcjaniezad/{{sankcjaniezad.id}}">Sankcja za niezadeklarowanie gruntów</a>
+                </li>
+                </b>
+            {% endif %}
+        {% endfor %}
+        {% for sankcjaterm in sankcjeterm %}
+              {% if sankcjaterm.id == user.id %}
+                <b>
+                <li>
+                    <a href ="sankcjaterm/{{sankcjaterm.id}}">Sankcja Terminowa</a>
+                </li>
+                </b>
+            {% endif %}
+        {% endfor %}
+    {% endif %}
+</div>
+
+{% endblock wszystko %}

@@ -1,0 +1,166 @@
+{% extends 'Kalkulator/szablon.html' %}
+
+{% block wszystko %}
+<div class="main-content">
+<b><p>Aby wyliczyć płatności wciśnij przycisk "OBLICZ PŁATNOŚCI".</p></b>
+<p> Twóje dane: </p>
+
+{% if user.is_authenticated %}
+    {% if platnoscjpo_podsumowanie %}
+        {% for platnoscjpo in platnoscjpo_podsumowanie %}
+            {% if platnoscjpo.id == user.id %}
+                <p>Czy Młody rolnik: {{platnoscjpo.czy_mr}}</p>
+                <p>Płatność: JPO,&nbsp;&nbsp;&nbsp; wartość deklarowana: {{platnoscjpo.dodanejpo}} ha,&nbsp;&nbsp;&nbsp; zmniejszenia: {{platnoscjpo.zmnjpo}} ha</p>
+            {% endif %}
+        {% endfor %}
+    {% else %}
+        <p> Obecnie brak jest danych do podsumowania. </p>
+    {% endif %}
+    {% if platnoscupp_podsumowanie %}
+        {% for platnoscupp in platnoscupp_podsumowanie %}
+            {% if platnoscupp.id == user.id %}
+                <p>Płatność: UPP,&nbsp;&nbsp;&nbsp; wartość deklarowana: {{platnoscupp.dodaneupp}} ha,&nbsp;&nbsp;&nbsp; zmniejszenia: {{platnoscupp.zmnupp}} ha</p>
+            {% endif %}
+        {% endfor %}
+    {% endif %}
+    {% if platnoscp_str_podsumowanie %}
+        {% for platnoscp_str in platnoscp_str_podsumowanie %}
+            {% if platnoscp_str.id == user.id %}
+                <p>Płatność: P_STR,&nbsp;&nbsp;&nbsp; wartość deklarowana: {{platnoscp_str.dodanep_str}} ha,&nbsp;&nbsp;&nbsp; zmniejszenia: {{platnoscp_str.zmnp_str}} ha</p>
+            {% endif %}
+        {% endfor %}
+    {% endif %}
+    {% if platnoscp_pas_podsumowanie %}
+        {% for platnoscp_pas in platnoscp_pas_podsumowanie %}
+            {% if platnoscp_pas.id == user.id %}
+                <p>Płatność: P_PAS,&nbsp;&nbsp;&nbsp; wartość deklarowana: {{platnoscp_pas.dodanep_pas}} ha,&nbsp;&nbsp;&nbsp; zmniejszenia: {{platnoscp_pas.zmnp_pas}} ha</p>
+            {% endif %}
+        {% endfor %}
+    {% endif %}
+    {% if platnoscp_burak_podsumowanie %}
+        {% for platnoscp_burak in platnoscp_burak_podsumowanie %}
+            {% if platnoscp_burak.id == user.id %}
+                <p>Płatność: P_Burak,&nbsp;&nbsp;&nbsp; wartość deklarowana: {{platnoscp_burak.dodanep_burak}} ha,&nbsp;&nbsp;&nbsp; zmniejszenia: {{platnoscp_burak.zmnp_burak}} ha</p>
+            {% endif %}
+        {% endfor %}
+    {% endif %}
+    {% if platnoscp_skrobia_podsumowanie %}
+        {% for platnoscp_skrobia in platnoscp_skrobia_podsumowanie %}
+            {% if platnoscp_skrobia.id == user.id %}
+                <p>Płatność: P_Skrobia,&nbsp;&nbsp;&nbsp; wartość deklarowana: {{platnoscp_skrobia.dodanep_skrobia}} ha,&nbsp;&nbsp;&nbsp; zmniejszenia: {{platnoscp_skrobia.zmnp_skrobia}} ha</p>
+            {% endif %}
+        {% endfor %}
+    {% endif %}
+    {% if platnoscp_trus_podsumowanie %}
+        {% for platnoscp_trus in platnoscp_trus_podsumowanie %}
+            {% if platnoscp_trus.id == user.id %}
+                <p>Płatność: P_Truskawka,&nbsp;&nbsp;&nbsp; wartość deklarowana: {{platnoscp_trus.dodanep_trus}} ha,&nbsp;&nbsp;&nbsp; zmniejszenia: {{platnoscp_trus.zmnp_trus}} ha</p>
+            {% endif %}
+        {% endfor %}
+    {% endif %}
+    {% if platnoscpomidor_podsumowanie %}
+        {% for platnoscpomidor in platnoscpomidor_podsumowanie %}
+            {% if platnoscpomidor.id == user.id %}
+                <p>Płatność: Pomidor,&nbsp;&nbsp;&nbsp; wartość deklarowana: {{platnoscpomidor.dodanepomidor}} ha,&nbsp;&nbsp;&nbsp; zmniejszenia: {{platnoscpomidor.zmnpomidor}} ha</p>
+            {% endif %}
+        {% endfor %}
+    {% endif %}
+    {% if platnoscchmiel_podsumowanie %}
+        {% for platnoscchmiel in platnoscchmiel_podsumowanie %}
+            {% if platnoscchmiel.id == user.id %}
+                <p>Płatność: Chmiel,&nbsp;&nbsp;&nbsp; wartość deklarowana: {{platnoscchmiel.dodanechmiel}} ha,&nbsp;&nbsp;&nbsp; zmniejszenia: {{platnoscchmiel.zmnchmiel}} ha</p>
+            {% endif %}
+        {% endfor %}
+    {% endif %}
+    {% if platnosclen_podsumowanie %}
+        {% for platnosclen in platnosclen_podsumowanie %}
+            {% if platnosclen.id == user.id %}
+                <p>Płatność: Len,&nbsp;&nbsp;&nbsp; wartość deklarowana: {{platnosclen.dodanelen}} ha,&nbsp;&nbsp;&nbsp; zmniejszenia: {{platnosclen.zmnlen}} ha</p>
+            {% endif %}
+        {% endfor %}
+    {% endif %}
+    {% if platnosckonopie_podsumowanie %}
+        {% for platnosckonopie in platnosckonopie_podsumowanie %}
+            {% if platnosckonopie.id == user.id %}
+                <p>Płatność: Konopie,&nbsp;&nbsp;&nbsp; wartość deklarowana: {{platnosckonopie.dodanekonopie}} ha,&nbsp;&nbsp;&nbsp; zmniejszenia: {{platnosckonopie.zmnkonopie}} ha</p>
+            {% endif %}
+        {% endfor %}
+    {% endif %}
+    {% if platnosctyton_podsumowanie %}
+        {% for platnosctyton in platnosctyton_podsumowanie %}
+            {% if platnosctyton.id == user.id %}
+                <p>Płatność: Tytoń,&nbsp;&nbsp;&nbsp; wartość deklarowana: {{platnosctyton.dodanetyton}} kg</p>
+            {% endif %}
+        {% endfor %}
+    {% endif %}
+    {% if platnoscvirginia_podsumowanie %}
+        {% for platnoscvirginia in platnoscvirginia_podsumowanie %}
+            {% if platnoscvirginia.id == user.id %}
+                <p>Płatność: Tytoń Virginia,&nbsp;&nbsp;&nbsp; wartość deklarowana: {{platnoscvirginia.dodanevirginia}} kg</p>
+            {% endif %}
+        {% endfor %}
+    {% endif %}
+    {% if platnosckrowy_podsumowanie %}
+        {% for platnoscpkrowy in platnosckrowy_podsumowanie %}
+            {% if platnosckrowy.id == user.id %}
+                <p>Płatność: Krowy,&nbsp;&nbsp;&nbsp; wartość deklarowana: {{platnosckrowy.dodanekrowy}} szt.,&nbsp;&nbsp;&nbsp; zmniejszenia: {{platnosckrowy.zmnkrowy}} szt.</p>
+            {% endif %}
+        {% endfor %}
+    {% endif %}
+    {% if platnoscbydlo_podsumowanie %}
+        {% for platnoscbydlo in platnoscbydlo_podsumowanie %}
+            {% if platnoscbydlo.id == user.id %}
+                <p>Płatność: Bydło,&nbsp;&nbsp;&nbsp; wartość deklarowana: {{platnoscbydlo.dodanebydlo}} szt.,&nbsp;&nbsp;&nbsp; zmniejszenia: {{platnoscbydlo.zmnbydlo}} szt.</p>
+            {% endif %}
+        {% endfor %}
+    {% endif %}
+    {% if platnoscowce_podsumowanie %}
+        {% for platnoscowce in platnoscowce_podsumowanie %}
+            {% if platnoscowce.id == user.id %}
+                <p>Płatność: Owce,&nbsp;&nbsp;&nbsp; wartość deklarowana: {{platnoscowce.dodaneowce}} szt.,&nbsp;&nbsp;&nbsp; zmniejszenia: {{platnoscowce.zmnowce}} szt.</p>
+            {% endif %}
+        {% endfor %}
+    {% endif %}
+    {% if platnosckozy_podsumowanie %}
+        {% for platnosckozy in platnosckozy_podsumowanie %}
+            {% if platnosckozy.id == user.id %}
+                <p>Płatność: Kozy,&nbsp;&nbsp;&nbsp; wartość deklarowana: {{platnosckozy.dodanekozy}} szt.,&nbsp;&nbsp;&nbsp; zmniejszenia: {{platnosckozy.zmnkozy}} szt.</p>
+            {% endif %}
+        {% endfor %}
+    {% endif %}
+    {% if sankcjacc_podsumowanie %}
+        {% for sankcjacc in sankcjacc_podsumowanie %}
+            {% if sankcjacc.id == user.id %}
+                <p>Sankcja: CC,&nbsp;&nbsp;&nbsp; wysokość sankcji: {{sankcjacc.dodanecc}} %</p>
+            {% endif %}
+        {% endfor %}
+    {% endif %}
+    {% if sankcjaefa_podsumowanie %}
+        {% for sankcjaefa in sankcjaefa_podsumowanie %}
+            {% if sankcjaefa.id == user.id %}
+                <p>Sankcja: EFA, &nbsp;&nbsp;&nbsp; powierzchnia GO: {{sankcjaefa.pow_go}} ha, &nbsp;&nbsp;&nbsp; powierzchnia EFA : {{sankcjaefa.pow_efa}} ha, &nbsp;&nbsp;&nbsp; wymagana pow. EFA : {{sankcjaefa.piecproc_efa}} ha, &nbsp;&nbsp;&nbsp; stwierdzony procent EFA : {{sankcjaefa.proc_efa}} %, &nbsp;&nbsp;&nbsp; brakująca pow. EFA : {{sankcjaefa.braku_efa}} ha</p>
+            {% endif %}
+        {% endfor %}
+    {% endif %}
+    {% if sankcjaniezad_podsumowanie %}
+        {% for sankcjaniezad in sankcjaniezad_podsumowanie %}
+            {% if sankcjaniezad.id == user.id %}
+                <p>Sankcja: Za niezadeklarowanie gruntów,&nbsp;&nbsp;&nbsp; wysokość sankcji: {{sankcjaniezad.dodaneniezad}} %</p>
+            {% endif %}
+        {% endfor %}
+    {% endif %}
+     {% if sankcjaterm_podsumowanie %}
+        {% for sankcjaterm in sankcjaterm_podsumowanie %}
+            {% if sankcjaterm.id == user.id %}
+                <p>Sankcja: Terminowa,&nbsp;&nbsp;&nbsp; wysokość sankcji: {{sankcjaterm.dodaneterm}} %</p>
+            {% endif %}
+        {% endfor %}
+    {% endif %}
+{% endif %}
+
+{% if platnoscjpo_podsumowanie %}
+    <button><a href="/oblicz">OBLICZ PŁATNOŚCI</a></button>
+{% endif %}
+</div>
+
+{% endblock wszystko %}

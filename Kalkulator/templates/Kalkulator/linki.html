@@ -1,0 +1,34 @@
+{% extends 'Kalkulator/szablon.html' %}
+
+<head>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'Kalkulator/style.css' %}">
+</head>
+
+
+{% block wszystko %}
+<div class="main-content">
+    <h3>Odnośniki do przydatnych stron:</h3>
+          <b>
+          <li>
+            <a href="https://www.gov.pl/web/arimr/zalaczniki-do-wniosku-o-przyznanie-platnosci-na-rok-2023" >Załączniki do wniosku o przyznanie płatności na rok 2023</a>
+          </li>
+          <li>
+            <a href="https://www.gov.pl/web/arimr/akty-prawne-na-rok-2023">Akty prawne na rok 2023</a>
+          </li>
+          <li>
+            <a href="https://www.gov.pl/web/arimr/rodzaje-platnosci-23">Rodzaje płatności na rok 2023</a>
+          </li>
+          <li>
+            <a href="https://www.gov.pl/web/arimr/rejestr-zabiegow-agrotechnicznych-wpr-2023--2027">Rejestr zabiegów agrotechnicznych</a>
+          </li>
+          <li>
+            <a href="https://www.gov.pl/web/arimr/warunkowosc">Warunkowość</a>
+          </li>
+          <li>
+            <a href="https://www.gov.pl/web/arimr/pomoc-krajowa">Pomoc krajowa realizowana przez ARiMR</a>
+          </li>
+          </b>
+</div>
+
+{% endblock wszystko %}

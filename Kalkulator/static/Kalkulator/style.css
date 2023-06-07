@@ -1,0 +1,70 @@
+li a {
+    color: greenyellow;
+}
+
+h1 {
+  color: Yellow;
+}
+
+p {
+    color: black;
+}
+
+nav ul {
+  background-color: gray;
+  list-style: none;
+  padding: 0;
+  width: 150px;
+  border: 3px solid Black;
+}
+
+nav ul li {
+  border-bottom: 3px solid Black;
+  padding: 5px;
+}
+
+nav ul li:last-child {
+  border-bottom: none;
+}
+
+nav ul li a {
+  color: black;
+  text-decoration: none;
+}
+
+b li {
+  list-style: none;
+  padding: 3px;
+  width: 500px;
+  color: black;
+  text-decoration: none;
+  border-bottom: none;
+}
+
+body {
+    background: lightgray
+}
+
+.main-container {
+    max-width: 1200px;
+    margin: auto;
+    background: white url("background.jpg") no-repeat center;
+}
+
+.main-content {
+    width: 800px;
+    background-color: gray;
+    float: left;
+    margin-left: 50px;
+}
+
+.site-menu {
+    float: left;
+}
+
+.przycisk{
+    position: absolute;
+    right: 8%;
+    top: 35px;
+}
+

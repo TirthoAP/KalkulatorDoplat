@@ -1,0 +1,26 @@
+{% extends 'Kalkulator/szablon.html' %}
+
+{% block wszystko %}
+{% load static %}
+
+<div class="main-content">
+<p>Płatność: P_Burak</p>
+<p>Opis: Płatność do buraka cukrowego zgodnie z umową kontraktacji.</p>
+<p>Stawka płatności: 1806,58 zł.</p>
+<p></p>
+
+<p></p>
+<p>Wprowadź powierzchnię dla płatności P_Burak oraz powierzchnię zmniejszeń.</p>
+    <form action="{% url 'dodajwartoscp_burak' platnoscp_burak.id %}" method='post'>
+        {% csrf_token %}
+        <table border="1">
+        {{ form }}
+        </table>
+        <b><p>W celu dodania wartości do wyliczeń  wciśnij przycisk "DODAJ DO WYLICZEŃ".</p></b>
+        <button name="submit">DODAJ DO WYLICZEŃ</button>
+        <b><p>Aby dokonać wyboru kolejnej płatności należy na panelu bocznym kliknąć "Wybierz płatności".</p></b>
+        <b><p>W celu wyliczenia płatności należy na panelu bocznym kliknąć "Podsumowanie".
+    </form>
+</div>
+
+{% endblock wszystko %}
